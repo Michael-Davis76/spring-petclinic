@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       matrix:
         java: [ '17' ]
@@ -27,3 +27,5 @@ jobs:
           cache: maven
       - name: Build with Maven Wrapper
         run: ./mvnw -B package
+      - name: upload artifact
+        run: curl -v -u ${{secrets.USERNAME}}:${{secrets.PASSWORD}} --upload-file target/spring-petclinic-3.1.0-SNAPSHOT.jar http://172.16.109.150:8081/repository/maven-releases/nexus/inhere/1.0/spring-pet-cleaning.jar
