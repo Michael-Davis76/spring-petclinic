@@ -28,5 +28,5 @@ jobs:
       - name: Build with Maven Wrapper
         run: ./mvnw -B package
       - name: upload artifact
-        run: ./mvnw deploy -DaltDeploymentRepository=nexus::default::${{ secrets.URL }} -DnexusUsername=${{ secrets.USERNAME }} -DnexusPassword=${{ secrets.PASSWORD }}
+        run: curl -v -u ${{secrets.USERNAME}}:${{secrets.PASSWORD}} --upload-file target/spring-petclinic-3.1.0-SNAPSHOT.jar ${{secrets.URL}}
 
