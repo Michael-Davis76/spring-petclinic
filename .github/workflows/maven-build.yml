@@ -28,5 +28,5 @@ jobs:
       - name: Build with Maven Wrapper
         run: ./mvnw -B package
       - name: upload artifact
-        run: ./mvnw deploy -DnexusUrl=${{ secrets.URL }} -DnexusUsername=${{ secrets.USERNAME }} -DnexusPassword=${{ secrets.PASSWORD }}
+        run: ./mvnw deploy -DaltDeploymentRepository=nexus::default::${{ secrets.URL }} -DnexusUsername=${{ secrets.USERNAME }} -DnexusPassword=${{ secrets.PASSWORD }}
 
