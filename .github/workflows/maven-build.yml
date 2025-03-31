@@ -1,6 +1,3 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
 name: Java CI with Maven
 
 on:
@@ -12,21 +9,25 @@ on:
 jobs:
   build:
 
-    runs-on: self-hosted
-    strategy:
-      matrix:
-        java: [ '17' ]
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-      - name: Set up JDK ${{matrix.java}}
+      
+      - name: Set up Nexus Repository
         uses: actions/setup-java@v4
         with:
-          java-version: ${{matrix.java}}
-          distribution: 'adopt'
-          cache: maven
-      - name: Build with Maven Wrapper
-        run: ./mvnw -B package
-      - name: upload artifact
-        run: curl -v -u ${{secrets.USERNAME}}:${{secrets.PASSWORD}} --upload-file target/spring-petclinic-3.1.0-SNAPSHOT.jar ${{secrets.URL}}
+          java-version: '17'
+          distribution: 'temurin'
+          server-id: nexus
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
 
+      - name: TESTING
+        run: cat ~/.m2/settings.xml
+
+      - name: Publish package!!
+        run: mvn clean deploy
+        env:
+          MAVEN_USERNAME: ${{ secrets.USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.PASSWORD }}

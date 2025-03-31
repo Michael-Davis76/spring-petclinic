@@ -118,6 +118,13 @@
       <artifactId>jakarta.xml.bind-api</artifactId>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+    <dependency>
+        <groupId>joda-time</groupId>
+        <artifactId>joda-time</artifactId>
+        <version>2.14.1</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -271,6 +278,15 @@
         <enabled>false</enabled>
       </snapshots>
     </repository>
+
+    <repository>
+      <id>maven-releases</id>
+      <name>Nexus Maven</name>
+      <url>https://9cee-2603-3006-0-7500-981b-3f46-34d4-e375.ngrok-free.app/repository/maven-releases</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
   </repositories>
 
   <pluginRepositories>
@@ -411,5 +427,19 @@
       </build>
     </profile>
   </profiles>
+
+    <!-- ==================================================================== -->
+  <distributionManagement>
+    <repository>
+      <id>maven-releases</id>
+      <name>Nexus Releases</name>
+      <url>https://9cee-2603-3006-0-7500-981b-3f46-34d4-e375.ngrok-free.app/repository/maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>maven-snapshots</id>
+      <name>Nexus Snapshots</name>
+      <url>https://9cee-2603-3006-0-7500-981b-3f46-34d4-e375.ngrok-free.app/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement> 
 
 </project>
