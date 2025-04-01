@@ -436,6 +436,7 @@
       <url>https://4078-2603-3006-0-7500-6438-5bde-4774-6985.ngrok-free.app/repository/maven-releases</url>
     </repository>
     <snapshotRepository>
+      <uniqueVersion>false</uniqueVersion>
       <id>maven-snapshots</id>
       <name>Nexus Snapshots</name>
       <url>https://4078-2603-3006-0-7500-6438-5bde-4774-6985.ngrok-free.app/repository/maven-snapshots</url>
