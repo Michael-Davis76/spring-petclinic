@@ -282,7 +282,7 @@
     <repository>
       <id>maven-releases</id>
       <name>Nexus Maven</name>
-      <url>hhttps://9e0d-2603-3006-0-7500-3c47-b8e2-fe61-16ee.ngrok-free.app/repository/maven-releases/</url>
+      <url>https://4078-2603-3006-0-7500-6438-5bde-4774-6985.ngrok-free.app/repository/maven-public/</url>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
@@ -433,12 +433,12 @@
     <repository>
       <id>maven-releases</id>
       <name>Nexus Releases</name>
-      <url>https://9e0d-2603-3006-0-7500-3c47-b8e2-fe61-16ee.ngrok-free.app/repository/maven-releases/</url>
+      <url>https://4078-2603-3006-0-7500-6438-5bde-4774-6985.ngrok-free.app/repository/maven-releases</url>
     </repository>
     <snapshotRepository>
       <id>maven-snapshots</id>
       <name>Nexus Snapshots</name>
-      <url>https://9e0d-2603-3006-0-7500-3c47-b8e2-fe61-16ee.ngrok-free.app/repository/maven-snapshots/</url>
+      <url>https://4078-2603-3006-0-7500-6438-5bde-4774-6985.ngrok-free.app/repository/maven-snapshots</url>
     </snapshotRepository>
   </distributionManagement> 
 
