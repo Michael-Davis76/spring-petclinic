@@ -282,7 +282,7 @@
     <repository>
       <id>maven-releases</id>
       <name>Nexus Maven</name>
-      <url>hhttps://9e0d-2603-3006-0-7500-3c47-b8e2-fe61-16ee.ngrok-free.app/repository/maven-snapshot</url>
+      <url>hhttps://9e0d-2603-3006-0-7500-3c47-b8e2-fe61-16ee.ngrok-free.app/repository/maven-releases</url>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
