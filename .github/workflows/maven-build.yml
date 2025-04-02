@@ -7,6 +7,20 @@ on:
     branches: [ master ]
 
 jobs:
+  build-chain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Run Build Chain
+        uses: kiegroup/github-action-build-chain@v3.5.9
+        with:
+          definition-file: .github/workflows/build-chain.yaml
+          starting-project: Michael-Davis76/spring-petclinic
+          flow-type: full-downstream
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   build:
 
     runs-on: ubuntu-latest

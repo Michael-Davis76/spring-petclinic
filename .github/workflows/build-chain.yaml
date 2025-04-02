@@ -1,0 +1,9 @@
+version: "2.1"
+dependencies:
+  - project: Michael-Davis76/spring-petclinic
+    dependencies:
+      - project: joda-time/joda-time
+        mapping:
+          branch:
+            source: main
+            target: main
