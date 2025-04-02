@@ -13,7 +13,7 @@ jobs:
       - name: Run Build Chain
         uses: kiegroup/github-action-build-chain@v3.5.9
         with:
-          definition-file: '.github/workflows/build-chain.yaml'
+          definition-file: 'https://raw.githubusercontent.com/Michael-Davis76/spring-petclinic/refs/heads/master/.github/workflows/build-chain.yaml'
           starting-project: Michael-Davis76/spring-petclinic
           flow-type: branch
           logger-level: debug
