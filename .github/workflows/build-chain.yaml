@@ -1,4 +1,14 @@
 version: "2.1"
-dependencies: |
-  Michael-Davis76/spring-petclinic:
-    - Michael-Davis76/joda-time:main
+dependencies:
+  - project: Michael-Davis76/spring-petclinic
+    dependencies:
+      - project: Michael-Davis76/joda-time
+    mapping:
+      dependencies:
+        default:
+          - source: main
+            target: master
+      dependant:
+        default:
+          - source: master
+            target: main
