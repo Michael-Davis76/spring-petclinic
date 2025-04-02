@@ -15,7 +15,7 @@ jobs:
         with:
           definition-file: .github/workflows/build-chain.yaml
           starting-project: Michael-Davis76/spring-petclinic
-          flow-type: full_downstream
+          flow-type: cross_pr
           logger-level: debug
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
