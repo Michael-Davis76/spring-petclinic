@@ -9,11 +9,19 @@ on:
 jobs:
   build-chain:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      actions: read
     steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
       - name: Run Build Chain
         uses: kiegroup/github-action-build-chain@v3.5.9
         with:
-          definition-file: 'https://raw.githubusercontent.com/Michael-Davis76/spring-petclinic/master/.github/workflows/build-chain.yaml'
+          definition-file: '.github/workflows/build-chain.yaml'
           starting-project: Michael-Davis76/spring-petclinic
           flow-type: branch
           logger-level: debug
