@@ -4,6 +4,7 @@ dependencies:
     dependencies:
       - project: Michael-Davis76/joda-time
         mapping:
-          branch:
-            source: main
-            target: master
+          dependencies:
+            default:
+              - source: main
+                target: master
