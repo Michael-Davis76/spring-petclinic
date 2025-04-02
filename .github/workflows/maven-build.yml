@@ -9,15 +9,7 @@ on:
 jobs:
   build-chain:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      actions: read
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          
       - name: Run Build Chain
         uses: kiegroup/github-action-build-chain@v3.5.9
         with:
@@ -26,7 +18,7 @@ jobs:
           flow-type: branch
           logger-level: debug
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
   build:
 
